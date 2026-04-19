@@ -120,7 +120,62 @@ const BD_DATA = {
     bangalore:  { label: "Bangalore IN (engineering office)", programs: ["Structural analysis", "CAD/CAM", "Certification support"], roles: 120 }
   },
 
-  // Program mix
+
+  outreachPlaybook: {
+    badge: "Cold→Warm",
+    headline: "Global 8000 ramp + Smart Router integration = engineering bandwidth gaps right now",
+    triggers: [
+      { icon:"✈️", label:"Global 8000 Ramp — Vista 18-Aircraft Order",
+        body:"Vista Global taking 18 Global 8000s at 2/month through 2026. Production acceleration requires structural engineering, systems integration, and cert bandwidth Bombardier can't fully absorb in-house.",
+        action:"Email hook: 'Vista 18 Global 8000s puts real pressure on your engineering schedule. We've handled structural and cert engineering for [ref OEM] at equivalent ramp speeds. 20-min call?'" },
+      { icon:"📡", label:"Smart Router In-Flight Systems Integration (Dec 2025)",
+        body:"New Smart Router connectivity system launched Dec 2025. Avionics integration, certification, and EMC testing required — natural outsource to specialized ER&D.",
+        action:"Pitch: 'Smart Router integration means cert documentation, EMC, and ICD engineering. We can turn that around fast — same model we use for Airbus cabin systems.'" },
+      { icon:"🏭", label:"MHI Wing Supply Chain Complexity",
+        body:"Mitsubishi Heavy Industries builds wings and center fuselages in Toronto. Multi-supplier integration = systems engineering complexity Bombardier manages but doesn't always execute.",
+        action:"Angle: Cyient as MHI/subsystem integration partner — structural interface docs, ICD management, and certification liaison work." },
+      { icon:"🇮🇳", label:"India Sourcing Opportunity",
+        body:"Bombardier has no India engineering presence. All engineering is Canada/UK. Indian ER&D at Cyient cost model = significant competitive advantage for Global 8000 program support.",
+        action:"Meeting hook: 'Gulfstream and Textron use Indian ER&D at scale. Bombardier has the same cost opportunity on Global 8000.'" }
+    ],
+    coldToWarm: [
+      { step:1, label:"Signal Monitor", body:"Watch Bombardier delivery reports, Vista/NetJets announcements, Smart Router updates. Each delivery milestone = an engineering demand signal." },
+      { step:2, label:"Personalised Email", body:"Reference Global 8000 delivery pace or Smart Router news. One sentence on Cyient's bizjet ER&D track record. One question." },
+      { step:3, label:"LinkedIn Outreach", body:"Connect with Bombardier VP Engineering and TA leaders in Montreal. Engage Global 8000 content with production insight." },
+      { step:4, label:"Event Pre-Outreach", body:"2 weeks before NBAA-BACE (Oct 20–22): email to schedule show meeting. Bombardier always has major booth presence." },
+      { step:5, label:"Warm Meeting", body:"Agenda: Global 8000 cert schedule → Cyient structural/systems track record → India cost model → pilot project scope." }
+    ]
+  },
+  partnerships: [
+    { name:"Mitsubishi Heavy Industries (MHI)", type:"Tier-1 Supplier", status:"Active since 2012",
+      desc:"MHI builds wings and center fuselages for Global 7500/8000 at Toronto. Long-term structural manufacturing partner.",
+      angle:"Wing/fuselage interface engineering, ICD management, structural documentation — outsourceable ER&D Cyient can support as integration partner." },
+    { name:"Honeywell Aerospace (Anthem Avionics)", type:"Avionics OEM", status:"Active",
+      desc:"Core avionics on Global 7500/8000 is Honeywell Anthem glass cockpit. Bombardier depends on Anthem cert timeline — cert slippage directly affects delivery.",
+      angle:"Anthem integration cert engineering is a risk point. Cyient's DO-178C avionics cert capability is a schedule hedge for Bombardier's Anthem program team." },
+    { name:"Rolls-Royce (Pearl 700/705)", type:"Propulsion Partner", status:"Active",
+      desc:"Pearl 700/705 engines power Global 7500/8000. Long-term propulsion partnership for ultra-long-range bizjet market.",
+      angle:"Tech pubs, engine interface documentation, and maintenance manual updates for Pearl 700/705 integration — Cyient entry via Rolls-Royce relationship." },
+    { name:"Parker Bertea / Collins (Systems)", type:"Systems Supplier", status:"Active",
+      desc:"Parker Bertea: fuel systems, flight controls. Collins: FMS and communications. Multi-supplier integration across Global 8000.",
+      angle:"Systems integration documentation, ICD management, and supplier coordination engineering. Position Cyient as the integration ER&D partner that 'speaks all suppliers'." }
+  ],
+  events: [
+    { name:"NBAA-BACE", date:"Oct 20–22, 2026", location:"Las Vegas, NV",
+      type:"Trade Show", priority:"🔴 MUST",
+      why:"Bombardier's premier annual event. Global 8000 static display, executive leadership all present. Best single opportunity to engage C-suite and engineering VP." },
+    { name:"Farnborough Airshow", date:"July 20–24, 2026", location:"Farnborough, UK",
+      type:"Trade Show", priority:"🔴 MUST",
+      why:"Bombardier signs major orders and partnership agreements at Farnborough. Supply chain and engineering leadership attend." },
+    { name:"VERTICON (HAI Heli-Expo)", date:"Mar 9–12, 2026", location:"Atlanta, GA",
+      type:"Trade Show", priority:"🟡 MEDIUM",
+      why:"Defense/private aviation crossover. Learjet and Challenger lines have rotary-wing adjacency — good for adjacent relationship building." },
+    { name:"MRO Americas", date:"Apr 21–23, 2026", location:"Orlando, FL",
+      type:"Trade Show", priority:"🟡 MEDIUM",
+      why:"Bombardier aftermarket and customer support team attends. Tech pubs, overhaul engineering, and maintenance support angles." }
+  ]
+
+    // Program mix
   programs: {
     global7500: { name: "Global 7500", status: "In production", note: "Flagship ultra-long-range; first to market with folding table + brow windows. 19-hr range. Up to 14 pax." },
     global8000: { name: "Global 8000", status: "FAA cert Dec 2025", note: "World's fastest/longest-range bizjet. Mach 0.94 / 8,000 nm. Entry into service 2026." },
@@ -167,6 +222,18 @@ const BD_DATA = {
     <div class="sidebar-item" onclick="switchSection(event,'hiring')">💼 Hiring Intelligence</div>
     <div class="sidebar-item" onclick="switchSection(event,'signals')">📡 Signal Chains</div>
     <div class="sidebar-item" onclick="switchSection(event,'competitive')">⚔️ Competitive Intel</div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Outreach Playbook</div>
+    <div class="sidebar-item" onclick="switchSection(event,'outreach')">🤝 Outreach Playbook <span style="background:#4caf50;color:#fff;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:700;margin-left:4px;">Cold→Warm</span></div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Partnership &amp; Alliances</div>
+    <div class="sidebar-item" onclick="switchSection(event,'partnerships')">🤝 Partnerships &amp; Alliances</div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-label">Industry Events</div>
+    <div class="sidebar-item" onclick="switchSection(event,'events')">📅 Industry Events</div>
+  </div>
   </div>
   <div class="sidebar-section">
     <div class="sidebar-label">Programs & Strategy</div>
@@ -793,6 +860,33 @@ const BD_DATA = {
 </div>
 
 <!-- ═══ COMPETITIVE INTEL ═══ -->
+
+<!-- ═══ OUTREACH PLAYBOOK ═══ -->
+<div id="outreach" class="section">
+  <div class="section-title">🤝 Outreach Playbook — <span id="op-headline"></span></div>
+  <div id="op-badge" style="display:inline-block;background:#4caf50;color:#fff;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:700;margin-bottom:22px;"></div>
+  <div id="op-triggers" class="grid-2" style="margin-bottom:28px;"></div>
+  <div class="card" style="border-top-color:#1a1a2e;">
+    <div class="card-title">Cold → Warm: 5-Step Sequence</div>
+    <div id="op-steps"></div>
+  </div>
+</div>
+
+<!-- ═══ PARTNERSHIPS ═══ -->
+<div id="partnerships" class="section">
+  <div class="section-title">🤝 Partnerships &amp; Alliances</div>
+  <div id="pw-cards" class="grid-2"></div>
+</div>
+
+<!-- ═══ EVENTS ═══ -->
+<div id="events" class="section">
+  <div class="section-title">📅 Industry Events — 2026 Calendar</div>
+  <div style="background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:12px 16px;margin-bottom:22px;font-size:12.5px;color:#92400e;">
+    🗓️ <strong>Why events matter:</strong> Pre-event outreach (2 weeks before each show) converts cold emails into scheduled meetings with procurement and engineering leadership.
+  </div>
+  <div id="ev-cards" class="grid-2"></div>
+</div>
+
 <div id="competitive" class="section">
   <div class="section-title">⚔️ Competitive Intel</div>
 
@@ -908,6 +1002,41 @@ const BD_DATA = {
 
 <script>
 // Populate dynamic data
+
+  // ── Outreach Playbook ────────────────────────────────────────────────
+  const op = BD_DATA.outreachPlaybook;
+  if(op && document.getElementById('op-headline')) {
+    document.getElementById('op-headline').textContent = op.headline;
+    document.getElementById('op-badge').textContent    = op.badge;
+    document.getElementById('op-triggers').innerHTML   = op.triggers.map(t => `
+      <div class="card" style="border-top-color:#7c3aed;">
+        <div class="card-title">${t.icon} ${t.label}</div>
+        <p style="font-size:12.5px;line-height:1.7;color:#444;margin-bottom:10px;">${t.body}</p>
+        <div style="background:#f0fdf4;border-left:3px solid #22c55e;padding:8px 12px;border-radius:0 6px 6px 0;font-size:11.5px;color:#166534;font-weight:600;">⚡ Action: ${t.action}</div>
+      </div>`).join('');
+    document.getElementById('op-steps').innerHTML = op.coldToWarm.map(s => `
+      <div style="display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #f0f0f0;">
+        <div style="min-width:28px;height:28px;background:#7c3aed;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;">${s.step}</div>
+        <div><div style="font-size:13px;font-weight:700;color:#1a1a2e;margin-bottom:4px;">${s.label}</div>
+        <div style="font-size:12px;color:#555;line-height:1.6;">${s.body}</div></div>
+      </div>`).join('');
+    document.getElementById('pw-cards').innerHTML = BD_DATA.partnerships.map(p => `
+      <div class="card" style="border-top-color:#0284c7;">
+        <div class="card-title">${p.name} <span class="tag">${p.type}</span> <span class="tag" style="background:#dcfce7;color:#166534;">${p.status}</span></div>
+        <p style="font-size:12.5px;line-height:1.7;color:#444;margin-bottom:10px;">${p.desc}</p>
+        <div style="background:#eff6ff;border-left:3px solid #0284c7;padding:8px 12px;border-radius:0 6px 6px 0;font-size:11.5px;color:#1e40af;font-weight:600;">🎯 Cyient Angle: ${p.angle}</div>
+      </div>`).join('');
+    document.getElementById('ev-cards').innerHTML = BD_DATA.events.map(e => `
+      <div class="card" style="border-top-color:#d97706;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+          <div class="card-title" style="margin-bottom:0;">${e.name}</div>
+          <span style="font-size:12px;font-weight:700;">${e.priority}</span>
+        </div>
+        <div style="font-size:12px;color:#666;margin-bottom:6px;">📍 ${e.location} &nbsp;·&nbsp; 📅 ${e.date} &nbsp;·&nbsp; <span class="tag">${e.type}</span></div>
+        <p style="font-size:12.5px;line-height:1.7;color:#444;">${e.why}</p>
+      </div>`).join('');
+  }
+
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('sb-refresh').textContent = BD_DATA.lastRefreshed;
   document.getElementById('kpi-rev').textContent  = '$' + BD_DATA.revenue + 'B';
