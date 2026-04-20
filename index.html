@@ -288,7 +288,8 @@ const BD_DATA = {
     <div class="sidebar-item" onclick="switchSection(event,'reference')">📚 Market Context</div>
   </div>
   
-  <div style="padding:8px 15px 4px 15px;"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#999;margin-bottom:4px;letter-spacing:0.5px;">Financial</div><div style="padding:7px 0px;cursor:pointer;font-size:13px;color:rgba(255,255,255,0.85);" onclick="switchSection ? switchSection(event,'financial') : (document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')), document.getElementById('financial')?.classList.add('active'))">💹 Financial Health</div></div>
+  <div style="padding:8px 15px 4px 15px;"><div style="font-size:11px;font-weight:700;text-transform:uppercase;color:#999;margin-bottom:4px;letter-spacing:0.5px;">Financial</div><div style="padding:7px 0px;cursor:pointer;font-size:13px;color:rgba(255,255,255,0.85);" onclick="switchSection ? switchSection(event,'priorities') : (document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')), document.getElementById('financial')?.classList.add('active'))">🎯 Account Priorities</div>
+<div style="padding:7px 0px;cursor:pointer;font-size:13px;color:rgba(255,255,255,0.85);" onclick="switchSection ? switchSection(event,'financial') : (document.querySelectorAll('.section').forEach(s=>s.classList.remove('active')), document.getElementById('financial')?.classList.add('active'))">💹 Financial Health</div></div>
   <div style="padding:15px;font-size:10px;color:#666;border-top:1px solid rgba(255,255,255,0.1);margin-top:10px;">
     Last refreshed: <span id="sb-refresh">—</span>
   </div>
@@ -1200,6 +1201,108 @@ document.getElementById('overview').classList.add('active');
 </script>
 
 <!-- ═══ FINANCIAL HEALTH ═══ -->
+
+<div id="priorities" class="section">
+  <div class="section-title" style="font-size:16px;font-weight:700;margin-bottom:4px;">🎯 Account Priorities — Bombardier — Business Aviation</div>
+  <div style="font-size:12px;color:#888;margin-bottom:18px;">Renewals at risk · Live signal opportunities · Strategic plays — refreshed with each data cycle</div>
+
+  <!-- Tab bar -->
+  <div style="display:flex;gap:0;margin-bottom:20px;border-bottom:2px solid #e5e7eb;">
+    <button onclick="showPriTab(this,'pri-renewals')" id="pri-tab-renewals"
+      style="padding:10px 20px;border:none;background:none;cursor:pointer;font-size:12px;font-weight:700;color:#d40000;border-bottom:3px solid #d40000;margin-bottom:-2px;">
+      🔄 Renewals <span style="background:#d40000;color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;margin-left:4px;">1</span>
+    </button>
+    <button onclick="showPriTab(this,'pri-signal')" id="pri-tab-signal"
+      style="padding:10px 20px;border:none;background:none;cursor:pointer;font-size:12px;font-weight:600;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;">
+      📡 Signal-Based Opps <span style="background:#ef4444;color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;margin-left:4px;">2</span>
+    </button>
+    <button onclick="showPriTab(this,'pri-strategic')" id="pri-tab-strategic"
+      style="padding:10px 20px;border:none;background:none;cursor:pointer;font-size:12px;font-weight:600;color:#666;border-bottom:3px solid transparent;margin-bottom:-2px;">
+      🏆 Strategic <span style="background:#f59e0b;color:#fff;border-radius:10px;padding:1px 7px;font-size:10px;margin-left:4px;">1</span>
+    </button>
+  </div>
+
+  <!-- Tab panels -->
+  <div id="pri-renewals">
+        <div style="background:white;border-radius:8px;padding:16px;border:1.5px solid #e8e8e8;border-left:4px solid #7c3aed;margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:700;color:#1a1a2e;">Global 7500 / 6500 Certification Documentation</div>
+            <span style="background:#7c3aed;color:#fff;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;">RENEWAL</span>
+          </div>
+          <div style="font-size:11px;color:#666;margin-bottom:8px;background:#f5f3ff;padding:6px 10px;border-radius:4px;">
+            🏢 <strong>Incumbent:</strong> CAE / Thales Training &nbsp;·&nbsp; ⏱ <strong>Timeline:</strong> Oct 2026
+          </div>
+          <div style="font-size:11.5px;color:#444;line-height:1.6;margin-bottom:8px;">Global 7500 AFM/FCOM certification documentation and training manual contract held by CAE Montreal. Review cycle open 2026 as Global 8000 certification documentation begins.</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <div style="font-size:11px;background:#e8f0fe;padding:4px 10px;border-radius:4px;color:#1a1a2e;"><strong>💰 TCV:</strong> USD 5–10M</div>
+          </div>
+          <div style="margin-top:8px;background:#f0fdf4;border-left:3px solid #22c55e;padding:7px 10px;border-radius:0 4px 4px 0;font-size:11px;color:#166534;font-weight:600;">🎯 Global 8000 cert docs — AFM, FCOM, S1000D AMM authoring from Montreal-adjacent India delivery team</div>
+        </div></div>
+  <div id="pri-signal" style="display:none;">
+  <div style="background:#fff7ed;border:1px solid #fed7aa;border-radius:6px;padding:9px 13px;margin-bottom:14px;display:flex;align-items:flex-start;gap:9px;font-size:11px;color:#92400e;">
+    <span style="font-size:15px;flex-shrink:0;">⚠️</span>
+    <span><strong>Estimated signals — verify before pitch.</strong> Hiring counts and intent data are based on research up to May 2025. Confirm live job postings on LinkedIn and validate incumbent vendor details before any customer conversation.</span>
+  </div>
+  
+        <div style="background:white;border-radius:8px;padding:16px;border:1.5px solid #e8e8e8;border-left:4px solid #0078d4;margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:700;color:#1a1a2e;">Optical Pressure Sensor & Fiber Optics Engineering <span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:6px;font-size:9px;font-weight:700;vertical-align:middle;margin-left:4px;">NEW</span></div>
+            <span style="background:#0078d4;color:#fff;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;">SIGNAL OPP</span>
+          </div>
+          <div style="font-size:11px;margin-bottom:8px;"><span style="background:#dbeafe;color:#1e40af;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;margin-right:4px;">Hiring: 5–15 avionics sensing roles</span><span style="background:#dbeafe;color:#1e40af;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;margin-right:4px;">Web search intent: optical/fiber sensing</span></div>
+          <div style="font-size:11.5px;color:#444;line-height:1.6;margin-bottom:6px;">Bombardier showing strong web search activity on 'Optical Pressure Sensors', 'Fiber Optics', 'Infrared (IR) Camera'. Hiring 5–15 engineers in avionics sensing systems (Quebec Dorval).</div>
+          <div style="margin-top:6px;"><div style="font-size:10.5px;color:#0a66c2;margin-top:2px;">👤 Justin L. — Section Chief, Avionics (Quebec Montreal)</div><div style="font-size:10.5px;color:#0a66c2;margin-top:2px;">👤 Kosmas Colocythas — Section Chief, Systems Engineering (Quebec Dorval)</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <div style="font-size:11px;background:#e8f0fe;padding:4px 10px;border-radius:4px;color:#1a1a2e;"><strong>💰 Est. TCV:</strong> USD 5–8M</div>
+          </div>
+          <div style="margin-top:8px;background:#f0fdf4;border-left:3px solid #22c55e;padding:7px 10px;border-radius:0 4px 4px 0;font-size:11px;color:#166534;font-weight:600;">🎯 Embedded HW/SW for optical sensing, DO-254 avionics sensing system certification support</div>
+        </div>
+        <div style="background:white;border-radius:8px;padding:16px;border:1.5px solid #e8e8e8;border-left:4px solid #0078d4;margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:700;color:#1a1a2e;">Advanced Engineering — Rui Pedro Silva Organisation <span style="background:#ef4444;color:#fff;padding:1px 6px;border-radius:6px;font-size:9px;font-weight:700;vertical-align:middle;margin-left:4px;">NEW</span></div>
+            <span style="background:#0078d4;color:#fff;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;">SIGNAL OPP</span>
+          </div>
+          <div style="font-size:11px;margin-bottom:8px;"><span style="background:#dbeafe;color:#1e40af;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;margin-right:4px;">Hiring: 15+ advanced engineering roles</span><span style="background:#dbeafe;color:#1e40af;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;margin-right:4px;">VP Engineering expansion signal</span></div>
+          <div style="font-size:11.5px;color:#444;line-height:1.6;margin-bottom:6px;">Rui Pedro Silva (VP Advanced Engineering) is expanding composite and advanced structures engineering in Montreal. 15+ open roles in advanced materials and structural certification.</div>
+          <div style="margin-top:6px;"><div style="font-size:10.5px;color:#0a66c2;margin-top:2px;">👤 Rui Pedro Silva — VP Advanced Engineering (pedro.silva@aero.bombardier.com)</div></div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;">
+            <div style="font-size:11px;background:#e8f0fe;padding:4px 10px;border-radius:4px;color:#1a1a2e;"><strong>💰 Est. TCV:</strong> USD 8–15M</div>
+          </div>
+          <div style="margin-top:8px;background:#f0fdf4;border-left:3px solid #22c55e;padding:7px 10px;border-radius:0 4px 4px 0;font-size:11px;color:#166534;font-weight:600;">🎯 Composite structure analysis, CATIA V5 design, DO-178C software for advanced systems — Hyderabad delivery</div>
+        </div></div>
+  <div id="pri-strategic" style="display:none;">
+        <div style="background:white;border-radius:8px;padding:16px;border:1.5px solid #e8e8e8;border-left:4px solid #f59e0b;margin-bottom:12px;">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+            <div style="font-size:13px;font-weight:700;color:#1a1a2e;">Global 8000 Full Documentation Programme</div>
+            <span style="background:#f59e0b;color:#fff;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;white-space:nowrap;">STRATEGIC</span>
+          </div>
+          <div style="font-size:11.5px;color:#444;line-height:1.6;margin-bottom:8px;">Bombardier's Global 8000 (longest-range business jet) is targeting entry into service 2025–2026. Full S1000D AMM/IPC/SRM/FCOM authoring programme represents a greenfield documentation opportunity.</div>
+          <div style="display:flex;gap:12px;margin-bottom:8px;">
+            <div style="font-size:11px;background:#fef3c7;padding:4px 10px;border-radius:4px;color:#92400e;"><strong>💰 TCV:</strong> USD 15–25M</div>
+            <div style="font-size:11px;background:#fef3c7;padding:4px 10px;border-radius:4px;color:#92400e;"><strong>⏱ Horizon:</strong> 12–24 months</div>
+          </div>
+          <div style="margin-top:8px;background:#f0fdf4;border-left:3px solid #22c55e;padding:7px 10px;border-radius:0 4px 4px 0;font-size:11px;color:#166534;font-weight:600;">🎯 Global 8000 certification documentation partner — leverage existing Bombardier relationships through Cyient supply chain contacts</div>
+        </div></div>
+</div>
+
+<script>
+function showPriTab(btn, panelId) {
+  document.querySelectorAll('[id^="pri-"]').forEach(function(el) {
+    if(el.id.startsWith('pri-tab')) {
+      el.style.color = '#666';
+      el.style.fontWeight = '600';
+      el.style.borderBottom = '3px solid transparent';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+  document.getElementById(panelId).style.display = 'block';
+  btn.style.color = '#d40000';
+  btn.style.fontWeight = '700';
+  btn.style.borderBottom = '3px solid #d40000';
+}
+</script>
+
 <div id="financial" class="section">
   <div class="section-title" style="font-size:16px;font-weight:700;margin-bottom:16px;">💹 Financial Health — Bombardier</div>
   <div style="background:linear-gradient(135deg,#0a2342,#d40000);color:white;border-radius:10px;padding:15px 20px;margin-bottom:22px;">
@@ -1207,32 +1310,176 @@ document.getElementById('overview').classList.add('active');
     <div style="font-size:11.5px;opacity:.93;line-height:1.7;">Bombardier's existential risk is USMCA trade exposure — 63% of revenue comes from the U.S. market and the 2026 USMCA review threatens supply chain costs. Revenue grew +10% in FY2025 to $9B. The opportunity: Bombardier's engineering services outsourcing model is well-established (they outsourced to Amod Kelkar's former team), and the tariff environment makes India-based engineering delivery more attractive.</div>
   </div>
 
-  <div style="background:white;border-radius:10px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:16px;">
-    <div style="font-size:13px;font-weight:700;margin-bottom:12px;color:#0a2342;">📈 Revenue, Margin &amp; R&amp;D Trend (Last 8 Quarters)</div>
-    <div style="overflow-x:auto;">
-      <table style="width:100%;border-collapse:collapse;font-size:11.5px;">
-        <thead>
-          <tr style="background:#0a2342;color:white;">
-            <th style="padding:8px 12px;text-align:left;">Quarter</th>
-            <th style="padding:8px 12px;text-align:right;">Revenue</th>
-            <th style="padding:8px 12px;text-align:right;">Op. Margin</th>
-            <th style="padding:8px 12px;text-align:right;">R&amp;D Spend</th>
-            <th style="padding:8px 12px;text-align:left;">Key Signal</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="background:white;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q1 2024</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$1.98B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">14.2%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$68M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">Global 7500 deliveries strong; aftermarket growing; Global 8000 certification on track</td></tr>
-          <tr style="background:#f9fafb;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q2 2024</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$2.14B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">14.8%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$72M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">Global 8000 EIS confirmed; Challenger 3500 strong demand; backlog $14.9B</td></tr>
-          <tr style="background:white;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q3 2024</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$2.31B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">15.1%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$76M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">Global 8000 first deliveries; Learjet phase-out complete; pure business jet strategy</td></tr>
-          <tr style="background:#f9fafb;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q4 2024</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$2.58B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">15.4%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$81M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">FY2024 revenue $9.0B; aftermarket 24-hour AOG service network expanded</td></tr>
-          <tr style="background:white;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q1 2025</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$2.02B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">13.8%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$69M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">Trump tariff threats; USMCA 2026 review: 63% U.S. revenue exposed; supply chain review</td></tr>
-          <tr style="background:#f9fafb;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q2 2025</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$2.22B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">14.5%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$73M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">Aftermarket growing double-digit; SmartLink+ digital MRO platform launch</td></tr>
-          <tr style="background:white;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q3 2025</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$2.38B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">14.9%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$77M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">Global Express family demand strong from Middle East/Asia; European deliveries recovering</td></tr>
-          <tr style="background:#f9fafb;"><td style="padding:7px 12px;border-bottom:1px solid #eee;">Q4 2025</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$2.59B</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">15.2%</td><td style="padding:7px 12px;text-align:right;border-bottom:1px solid #eee;">$82M</td><td style="padding:7px 12px;border-bottom:1px solid #eee;">FY2025 revenue ~$9.2B (+10%); USMCA risk being managed; Wichita center expansion</td></tr>
-        </tbody>
-      </table>
+  
+  <!-- CHARTS: Bombardier Financial Health -->
+  <div style="background:white;border-radius:10px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:16px;">
+    <div style="font-size:13px;font-weight:700;margin-bottom:6px;color:#003087;">📈 Financial Trend Analysis — 8-Quarter View</div>
+    <div style="font-size:11px;color:#666;margin-bottom:18px;">Ticker: BBD.B (TSX) &nbsp;|&nbsp; Currency: $B &nbsp;|&nbsp; Hover charts for detail</div>
+
+    <!-- Row 1: Revenue + Margin -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+      <div>
+        <div style="font-size:12px;font-weight:700;color:#003087;margin-bottom:8px;">💰 Revenue Trend ($B)</div>
+        <canvas id="rev_bombardier" style="max-height:260px;"></canvas>
+        <div style="margin-top:10px;padding:10px;background:#f8f9ff;border-left:3px solid #003087;border-radius:4px;font-size:11px;line-height:1.7;color:#333;">Bombardier has executed one of the best post-restructuring growth stories in aerospace — from $1.98B to $2.59B (+31%) over 8 quarters. The Global 8000 first deliveries in Q3 2024, Challenger 3500 strong demand, and the exit from Learjet created a pure-play ultra/large business jet manufacturer with a record $17.5B backlog. The Q1 2025 seasonal dip is structural (fewest deliveries in Q1). USMCA/tariff risk is the main 2026 exposure — 63% of revenue is US-facing. <strong>Cyient angle:</strong> Bombardier's Wichita expansion (2025) and Global 8000/Challenger certification programmes are creating sustained engineering demand.</div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:#003087;margin-bottom:8px;">📊 Operating Margin %</div>
+        <canvas id="mg_bombardier" style="max-height:260px;"></canvas>
+        <div style="margin-top:10px;padding:10px;background:#f8f9ff;border-left:3px solid #003087;border-radius:4px;font-size:11px;line-height:1.7;color:#333;">Margin improvement from 14.2% to 15.2% over 8 quarters reflects Global 8000 premium mix, aftermarket growing double-digit (Q2 2025 SmartLink+ launch), and Learjet phase-out eliminating low-margin volume. Q1 2025's 13.8% dip reflected tariff uncertainty provisioning. Bombardier's 15%+ target margin is achievable but depends on maintaining delivery mix and managing USMCA exposure. <strong>Cyient angle:</strong> Bombardier's margin growth is heavily dependent on engineering efficiency — Cyient's certifications (DO-178C, ARP4754A) and Wichita proximity (India CoE accessible) make a compelling outsourcing case.</div>
+      </div>
+    </div>
+
+    <!-- Row 2: R&D + CapEx -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div>
+        <div style="font-size:12px;font-weight:700;color:#003087;margin-bottom:8px;">🔬 R&amp;D Spend ($M)</div>
+        
+      <canvas id="rd_bombardier" style="max-height:260px;"></canvas>
+        <div style="margin-top:10px;padding:10px;background:#f8f9ff;border-left:3px solid #003087;border-radius:4px;font-size:11px;line-height:1.7;color:#333;">R&D grew from $68M to $82M/quarter as Global 8000 entered service and attention shifted to next-generation cabin technology, hybrid propulsion studies, and Challenger 3500 improvements. At only 3–3.5% of revenue, Bombardier's R&D intensity is lower than peers — a deliberate choice to focus on incremental improvements over new programmes post-restructuring. <strong>Cyient angle:</strong> Bombardier has an active engineering outsourcing practice. Cyient should target the Global 8000 systems documentation, cabin systems integration, and sustainability engineering (SAF compatibility certification).</div>
+      </div>
+      <div>
+        <div style="font-size:12px;font-weight:700;color:#003087;margin-bottom:8px;">🏗️ CapEx ($M)</div>
+        
+      <canvas id="cx_bombardier" style="max-height:260px;"></canvas>
+        <div style="margin-top:10px;padding:10px;background:#f8f9ff;border-left:3px solid #003087;border-radius:4px;font-size:11px;line-height:1.7;color:#333;">CapEx grew from $48M to $65M/quarter — modest by OEM standards but focused: Global 8000 final assembly tooling, Wichita customer service centre expansion, and SmartLink+ digital infrastructure. Bombardier's low-CapEx model is a deliberate strategy to maximise free cash flow for debt reduction. The 35% CapEx growth over 8 quarters signals selective but meaningful investment. <strong>Cyient angle:</strong> Bombardier's asset-light model creates more opportunities for engineering services outsourcing as they avoid large internal engineering headcount expansions.</div>
+      </div>
     </div>
   </div>
+
+  <script>
+  (function(){
+    var qs = ["Q1'24","Q2'24","Q3'24","Q4'24","Q1'25","Q2'25","Q3'25","Q4'25"];
+    var accent = '#003087';
+    function hexToRgba(hex, alpha) {
+      var r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16);
+      return 'rgba('+r+','+g+','+b+','+alpha+')';
+    }
+    var aFill = hexToRgba(accent, 0.15);
+    var aBorder = hexToRgba(accent, 0.85);
+
+    // Revenue chart
+    new Chart(document.getElementById('rev_bombardier'), {
+      type: 'bar',
+      data: {
+        labels: qs,
+        datasets: [{
+          label: 'Revenue ($B)',
+          data: [1.98,2.14,2.31,2.58,2.02,2.22,2.38,2.59],
+          backgroundColor: hexToRgba(accent, 0.75),
+          borderColor: aBorder,
+          borderWidth: 1.5,
+          borderRadius: 4,
+          yAxisID: 'y'
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c){ return ' '+c.raw+' $B'; } } } },
+        scales: {
+          y: { beginAtZero: false, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: {size:10} } },
+          x: { grid: { display: false }, ticks: { font: {size:9}, maxRotation: 45 } }
+        }
+      }
+    });
+
+    // Margin chart
+    var mgData = [14.2,14.8,15.1,15.4,13.8,14.5,14.9,15.2];
+    new Chart(document.getElementById('mg_bombardier'), {
+      type: 'line',
+      data: {
+        labels: qs,
+        datasets: [{
+          label: 'Op. Margin %',
+          data: mgData,
+          pointBackgroundColor: ["rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)"],
+          pointBorderColor: ["rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)","rgba(46,125,50,0.85)"],
+          pointRadius: 5,
+          borderColor: hexToRgba(accent, 0.7),
+          backgroundColor: function(ctx){
+            var canvas=ctx.chart.canvas, gradient=canvas.getContext('2d').createLinearGradient(0,0,0,200);
+            gradient.addColorStop(0, hexToRgba(accent, 0.25));
+            gradient.addColorStop(1, 'rgba(255,255,255,0.01)');
+            return gradient;
+          },
+          fill: true, tension: 0.3
+        },{
+          label: 'Zero line',
+          data: qs.map(function(){ return 0; }),
+          borderColor: 'rgba(180,0,0,0.3)',
+          borderWidth: 1,
+          borderDash: [4,4],
+          pointRadius: 0,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: true,
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c){ return c.datasetIndex===0?' '+c.raw+'%':''; } } } },
+        scales: {
+          y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { callback: function(v){ return v+'%'; }, font: {size:10} } },
+          x: { grid: { display: false }, ticks: { font: {size:9}, maxRotation: 45 } }
+        }
+      }
+    });
+
+    // R&D chart
+    var rdEl = document.getElementById('rd_bombardier');
+    if(rdEl) {
+      new Chart(rdEl, {
+        type: 'bar',
+        data: {
+          labels: qs,
+          datasets: [{
+            label: 'R&D ($M)',
+            data: [68,72,76,81,69,73,77,82],
+            backgroundColor: 'rgba(13,71,161,0.7)',
+            borderColor: 'rgba(13,71,161,0.9)',
+            borderWidth: 1.5,
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: true,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c){ return ' '+c.raw+' $M'; } } } },
+          scales: {
+            y: { beginAtZero: false, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: {size:10} } },
+            x: { grid: { display: false }, ticks: { font: {size:9}, maxRotation: 45 } }
+          }
+        }
+      });
+    }
+
+    // CapEx chart
+    var cxEl = document.getElementById('cx_bombardier');
+    if(cxEl) {
+      new Chart(cxEl, {
+        type: 'bar',
+        data: {
+          labels: qs,
+          datasets: [{
+            label: 'CapEx ($M)',
+            data: [48,52,55,62,50,54,58,65],
+            backgroundColor: 'rgba(56,142,60,0.7)',
+            borderColor: 'rgba(27,94,32,0.9)',
+            borderWidth: 1.5,
+            borderRadius: 4
+          }]
+        },
+        options: {
+          responsive: true, maintainAspectRatio: true,
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c){ return ' '+c.raw+' $M'; } } } },
+          scales: {
+            y: { beginAtZero: false, grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { font: {size:10} } },
+            x: { grid: { display: false }, ticks: { font: {size:9}, maxRotation: 45 } }
+          }
+        }
+      });
+    }
+
+  })();
+  </script>
+  <!-- END CHARTS: Bombardier -->
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;">
     <div style="background:white;border-radius:10px;padding:18px;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
